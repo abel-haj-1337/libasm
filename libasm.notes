@@ -1,0 +1,44 @@
+x64	x86_64
+
+.
+Assembly language is designed for a specific type of processor
+Inline ASM is inserting assembly code to a function. EX: int main() { asm("movl %ebx, %eax"); }
+
+
+TERMINOLOGY
+Caller			:
+	The function that calls.
+	EX: main()
+
+Callee			:
+	The called function
+	EX: sum()
+
+Registers		: (16)
+	are storage holders (like RAM) located in the CPU
+	rax, rbx, rcx, rdx, rdi, rsi, rsp, rbp, r8...r15.
+#	eax, ecx, edx, esi, edi, ebx, ebp
+
+Operand
+	Value, data, register...
+
+
+INSTRUCTIONS
+MOV		Move data from one location to another
+ADD		Add two values
+SUB		Subtract a value from another value
+PUSH	Push data onto a stack
+POP		Pop data from a stack
+JMP		Jump to another location
+INT		Interrupt a process	
+
+
+AT&T vs Intel Syntax
+	AT&T
+		Immediate operands (values) are preceded by $ EX: $1, $5...
+		Register operands are preceded by % EX: %ax, %bx...
+		Jump/call operands are prefixed by * EX: call *100, jmp *%eax...
+		Instruction  source, destination
+	Intel
+		Instruction  destination, source
+
