@@ -15,8 +15,13 @@ Callee			:
 	EX: sum()
 
 Registers		: (16)
-	are storage holders (like RAM) located in the CPU
-	rax, rbx, rcx, rdx, rdi, rsi, rsp, rbp, r8...r15.
+	are storage holders (like RAM) located in the CPU : rax, rbx, rcx, rdx, rdi, rsi, rsp, rbp, r8...r15.
+	RDI	First function argument
+	RSI	Second argument
+	RDX	Third argument
+	RCX	Fourth argument
+	R8	Fifth argument
+	R9	Sixth argument
 #	eax, ecx, edx, esi, edi, ebx, ebp
 
 Operand
