@@ -14,14 +14,25 @@ Callee			:
 	The called function
 	EX: sum()
 
-Registers		: (16)
-	are storage holders (like RAM) located in the CPU : rax, rbx, rcx, rdx, rdi, rsi, rsp, rbp, r8...r15.
+Registers		: (16?)
+	Are storage holders (like RAM) located in the CPU : rax, rbx, rcx, rdx, rdi, rsi, rsp, rbp, r8...r15.
+	Registers beginning with 'R' are 64-bit(except for R8D..., R8W..., R8B...), regsiters beginning with 'E' are 32-bit.
+	A : Accumulator, C : Counter, D : Data||Destination, B : Base, S : Stack||Source. 
+	RAX	Temporary register, first return register (integer), syscall?
+	RBX	Callee-saved register, base pointer
+	RSP	Stack pointer?
+	RBP Callee-saved register, frame pointer, stack base pointer?
 	RDI	First function argument
 	RSI	Second argument
-	RDX	Third argument
+	RDX	Third argument, second return register
 	RCX	Fourth argument
 	R8	Fifth argument
 	R9	Sixth argument
+	R10	Temp register
+	R12	Callee-saved register
+	...	
+	R15	Callee-saved register
+
 #	eax, ecx, edx, esi, edi, ebx, ebp
 
 Operand
