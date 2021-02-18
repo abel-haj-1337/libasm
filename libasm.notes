@@ -18,7 +18,7 @@ Registers		: (16?)
 	Are storage holders (like RAM) located in the CPU : rax, rbx, rcx, rdx, rdi, rsi, rsp, rbp, r8...r15.
 	Registers beginning with 'R' are 64-bit(except for R8D..., R8W..., R8B...), regsiters beginning with 'E' are 32-bit.
 	A : Accumulator, C : Counter, D : Data||Destination, B : Base, S : Stack||Source. 
-	RAX	Temporary register, first return register (integer), syscall?
+	RAX	Temporary register, first return register (integer), number for syscall
 	RBX	Callee-saved register, base pointer
 	RSP	Stack pointer?
 	RBP Callee-saved register, frame pointer, stack base pointer?
@@ -38,6 +38,8 @@ Registers		: (16?)
 Operand
 	Value, data, register...
 
+SYS_CALLS
+	0x2000004		write
 
 INSTRUCTIONS
 MOV		Move data from one location to another
