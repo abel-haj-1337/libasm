@@ -2,3 +2,4 @@
 .DS_Strore
 a.out
 *.a
+*.o
