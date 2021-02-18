@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: abel-haj <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: abel-haj <abel-haj@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/09 17:55:20 by abel-haj          #+#    #+#              #
-#    Updated: 2021/02/09 17:59:43 by abel-haj         ###   ########.fr        #
+#    Updated: 2021/02/18 13:00:46 by abel-haj         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,9 @@ SRCS		=
 
 $(NAME)		:
 
+test		:
+	nasm -f macho64 try.s -t && \
+	ld try.o -lSystem
 
 all			: $(NAME)
 
