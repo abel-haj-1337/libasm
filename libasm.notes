@@ -60,3 +60,4 @@ AT&T vs Intel Syntax
 	Intel
 		Instruction  destination, source
 
+Always JMP to labels and CALL functions
