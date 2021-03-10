@@ -2,16 +2,16 @@ section .text
 	global _ft_strcmp
 
 _ft_strcmp:
-	; initializing index
+	; initializing values
 	xor rax, rax
-	xor r9, r9
+	xor r10, r10
 
 loop_it:
-	movzx r9, byte [rdi]
-	cmp r9, [rsi]
+	mov r10b, byte [rdi]
+	cmp r10b, [rsi]
 	jg greater_than
 	jb lower_than
-	cmp r9, byte 0
+	cmp r10b, byte 0
 	je equal_to
 	add rdi, 1
 	add rsi, 1
