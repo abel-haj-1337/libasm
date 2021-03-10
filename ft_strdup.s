@@ -1,13 +1,13 @@
 section .text
 	global _ft_strdup
+	extern _malloc
+	extern _ft_strlen
 
 _ft_strdup:
 	add rdi, 3
 	mov rax, rdi
 	ret
 
-	extern _ft_strlen
-	extern malloc
 	xor rax, rax
 
 	call _ft_strlen
@@ -20,23 +20,22 @@ _ft_strdup:
 
 	; storing length as first argument for malloc
 	mov rdi, rax
-	mov r11, rax
-	call malloc
-
-	; storing allocated space in another register
 	mov r10, rax
+	call _malloc
 
 	; retrieve strdup first argument
 	pop rdi
 
-	; duplicating string
-	xor rax, rax
-
-
-	jmp return_it
-
+; duplicating string
 loop_it:
+	xor r11, r11
+	mov r11b, [rdi]
+	mov [rax], r11b
+	cmp r11b, byte 0
+	je return_it
+	add rdi, 1
+	add rax, 1
+	jne loop_it
 
 return_it:
-	mov rax, rdi
 	ret
