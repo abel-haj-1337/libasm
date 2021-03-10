@@ -1,13 +1,15 @@
 section .data
-	msg db "Asmaa kh",10
+	s_msg db ""
+	msg db "test",10
 	len equ $ - msg
+	
 section .text
 	global _main
 
 _main:
 	mov rdi, 1
 	mov rsi, msg
-	mov rdx, len 
+	mov rdx, 5 
 	mov rax, 0x2000004
 	syscall
 	ret
