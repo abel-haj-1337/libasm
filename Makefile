@@ -6,25 +6,27 @@
 #    By: abel-haj <abel-haj@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/09 17:55:20 by abel-haj          #+#    #+#              #
-#    Updated: 2021/02/18 13:00:46 by abel-haj         ###   ########.fr        #
+#    Updated: 2021/04/03 18:43:29 by abel-haj         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libasm.a
 
-SRCS		= 
+SRCS		= ft_read.s ft_strcmp.s ft_strcpy.s ft_strdup.s ft_strlen.s ft_write.s
 
-$(NAME)		:
+OBJS		= $(SRCS:.c=.o)
 
-test		:
-	nasm -f macho64 try.s -t && \
-	ld try.o -lSystem
+%.o : %.s
+	$(NASM) $< -o $@
+
+# $(NAME)		:
+# 	nasm -f macho64 $(SRCS) -o $< $@
+# 	ar rc $(NAME) $(OBJS)
 
 all			: $(NAME)
 
-
 clean		:
-	
+	rm $(OBJS)	
 
 fclean		: clean
 	rm $(NAME)
