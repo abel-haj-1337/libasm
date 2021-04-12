@@ -1,17 +1,19 @@
 section .text
 	global _ft_read
+	extern ___error
 
 _ft_read:
-	; backup
-	push rdi
-	push rsi
-	push rdx
 
 	mov rax, 0x2000003
 	syscall
-
-	pop rdi
-	pop rsi
-	pop rdx
+	jc _error_it
 
 	ret
+
+_error_it:
+	push rax
+	call ___error
+	pop qword [rax]
+	mov rax, -1
+	ret
+	

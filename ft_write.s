@@ -3,16 +3,16 @@ section .text
 	extern ___error
 
 _ft_write:
-	; backup
-	push rdi
-	push rsi
-	push rdx
 
 	mov rax, 0x2000004
 	syscall
+	jc _error_it
 
-	pop rdi
-	pop rsi
-	pop rdx
+	ret
 
+_error_it:
+	push rax
+	call ___error
+	pop qword [rax]
+	mov rax, -1
 	ret
