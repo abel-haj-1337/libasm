@@ -44,9 +44,9 @@ int		main()
 	// printf("|%s|\n", ft_strcmp("string", "strin"));
 
 	char *b = ft_strdup("character");
-	printf("|%s|\n", b);
 	char *c = "string";
-	c[0] = '1';
+	b[8] = '1';
+	printf("|%s|\n", b);
 	// write(1, &b[0], 1);
 	return 0;
 }
