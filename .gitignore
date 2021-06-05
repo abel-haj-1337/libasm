@@ -5,3 +5,7 @@ a.out
 *.o
 *.out
 *.out.*
+
+# testers
+*.zip
+*tester/
