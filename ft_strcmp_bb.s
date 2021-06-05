@@ -21,12 +21,12 @@ loop_it:
 
 greater_than:
   sub r9b, r10b
-  movzx rax, r9b
+  mov rax, r9b
   ret
 
 lower_than:
   sub r9b, r10b
-  movzx rax, r9b
+  mov rax, r9b
   ret
 
 equal_to:
