@@ -14,14 +14,20 @@ NAME		= libasm.a
 
 SRCS		= ft_read.s ft_strcmp.s ft_strcpy.s ft_strdup.s ft_strlen.s ft_write.s
 
-OBJS		= $(SRCS:.c=.o)
+OBJS		= $(SRCS:.s=.o)
 
-%.o : %.s
-	$(NASM) $< -o $@
+# %.o : %.s
+# 	$(NASM) $< -o $@
 
-# $(NAME)		:
+$(NAME)		:
 # 	nasm -f macho64 $(SRCS) -o $< $@
-# 	ar rc $(NAME) $(OBJS)
+	nasm -f macho64 ft_read.s
+	nasm -f macho64 ft_strcmp.s
+	nasm -f macho64 ft_strcpy.s
+	nasm -f macho64 ft_strdup.s
+	nasm -f macho64 ft_strlen.s
+	nasm -f macho64 ft_write.s
+	ar rc $(NAME) $(OBJS)
 
 all			: $(NAME)
 
