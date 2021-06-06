@@ -13,7 +13,7 @@ _ft_strcpy:
 
 loop_it:
 	; iterating using index (rax)
-	cmp  [rsi + rax], byte 0
+	cmp [rsi + rax], byte 0
 	movzx r9, byte [rsi + rax]
 	mov [rdi + rax], r9
 	je return_it
