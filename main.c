@@ -20,6 +20,7 @@ ssize_t	ft_write(int fildes, const void *buf, size_t nbyte);
 
 int		main()
 {
+  printf("---------\n");
 	// char *s = malloc(ft_strlen("stratosphere") + 1);
 
 	// s[0] = 's'; s[1] = 't'; s[3] = '\0';
@@ -39,14 +40,15 @@ int		main()
 
 	// printf("%d", ft_strlen(ft_strcpy(s, "")));
 
-	// printf("%03d\n", strcmp("z", ""));
-	// printf("%03d\n", ft_strcmp("z", ""));
-	// printf("|%s|\n", ft_strcmp("string", "strin"));
+	printf("%03d\n", strcmp("�", "a"));
+	printf("%03d\n", ft_strcmp("�", "a"));
+	// printf("|%03d|\n", ft_strcmp("string", "strin"));
 
-	char *b = ft_strdup("character");
-	char *c = "string";
-	b[8] = '1';
-	printf("|%s|\n", b);
+	// char *b = ft_strdup("character");
+	// char *c = "string";
+	// b[8] = '1';
+	// printf("|%s|\n", b);
+
 	// write(1, &b[0], 1);
 	return 0;
 }

@@ -1,34 +1,30 @@
-section .data
-  global _ft_strcmp
+section .text
+	global _ft_strcmp
 
+; rdi : first argument
+; rsi : second argument
 _ft_strcmp:
-  ; first param RDI
-  ; second param RSI
-
-  ; initializing
-  xor rax, rax
+	; initializing values
+	xor rax, rax
+	xor r10, r10
+	xor r9, r9
 
 loop_it:
   mov r9b, [rdi]
   mov r10b, [rsi]
-  cmp r9b, r10b
-  jg greater_than
-  jb lower_than
   cmp r9b, 0
-  je equal_to
+  je diff_then_ret
+  cmp r9b, r10b
+  jne diff_then_ret
   add rdi, 1
   add rsi, 1
-
-greater_than:
-  sub r9b, r10b
-  movzx rax, r9b
-  ret
-
-lower_than:
-  sub r9b, r10b
-  movzx rax, r9b
-  ret
+  jmp loop_it
 
 equal_to:
-  mov rax, 0
+	mov rax, 0
+	ret
+
+diff_then_ret:
+  sub r9, r10
+  mov rax, r9
   ret

@@ -16,11 +16,7 @@ SRCS		= ft_read.s ft_strcmp.s ft_strcpy.s ft_strdup.s ft_strlen.s ft_write.s
 
 OBJS		= $(SRCS:.s=.o)
 
-# %.o : %.s
-# 	$(NASM) $< -o $@
-
 $(NAME)		:
-# 	nasm -f macho64 $(SRCS) -o $< $@
 	nasm -f macho64 ft_read.s
 	nasm -f macho64 ft_strcmp.s
 	nasm -f macho64 ft_strcpy.s
@@ -32,9 +28,9 @@ $(NAME)		:
 all			: $(NAME)
 
 clean		:
-	rm $(OBJS)	
+	rm -f $(OBJS) a.out
 
 fclean		: clean
-	rm $(NAME)
+	rm -f $(NAME)
 
 re			: fclean all
