@@ -2,14 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-
-int		ft_strlen(char *s);
-// char	*ft_strcmp(const char *s1, const char *s2);
-int		ft_strcmp(const char *s1, const char *s2);
-char	*ft_strcpy(char * dst, const char * src);
-ssize_t	ft_read(int fildes, void *buf, size_t nbyte);
-char	*ft_strdup(const char *s1);
-ssize_t	ft_write(int fildes, const void *buf, size_t nbyte);
+#include "libasm.h"
 
 // TODO
 	// code strdup using malloc
@@ -40,8 +33,8 @@ int		main()
 
 	// printf("%d", ft_strlen(ft_strcpy(s, "")));
 
-	printf("%03d\n", strcmp("�", "a"));
-	printf("%03d\n", ft_strcmp("�", "a"));
+	// printf("%03d\n", strcmp("�", "a"));
+	// printf("%03d\n", ft_strcmp("�", "a"));
 	// printf("|%03d|\n", ft_strcmp("string", "strin"));
 
 	// char *b = ft_strdup("character");
@@ -50,5 +43,8 @@ int		main()
 	// printf("|%s|\n", b);
 
 	// write(1, &b[0], 1);
+
+  // printf("%s", strerror(ft_strdup("str")));
+  printf("%s", ft_strdup("str"));
 	return 0;
 }
